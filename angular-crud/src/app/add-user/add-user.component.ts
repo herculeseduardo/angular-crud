@@ -13,6 +13,7 @@ export class AddUserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
 
   addForm: FormGroup;
+  submitted = false;
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
@@ -28,6 +29,11 @@ export class AddUserComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
+
+    if (this.addForm.invalid) {
+      return;
+    }
     this.apiService.createUser(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['list-users']);

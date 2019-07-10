@@ -41,3 +41,13 @@ section {
   margin: auto;
   max-width: 80%;
 }
+.form-group {
+  .error {
+    margin-top: -20px;
+    background: yellow;
+    padding: 1px;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+}

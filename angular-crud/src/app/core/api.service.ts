@@ -34,6 +34,6 @@ export class ApiService {
   }
 
   deleteUser(id: number): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(this.baseUrl + id);
+    return this.http.delete<ApiResponse>(`${this.baseUrl}${id}`);
   }
 }
